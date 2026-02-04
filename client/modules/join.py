@@ -6,6 +6,7 @@ import subprocess
 
 def is_docker():
          return os.path.exists('/.dockerenv')
+         print(" no rick role fun")
 
 def get_host_ip():
          try:
@@ -27,7 +28,7 @@ if not username:
 
 if is_docker():
          default_server = get_host_ip()
-         print(f"[Docker mode detected] Host IP: {default_server}")
+         print(f"using docker no rick role fun")
 else:
          default_server = "127.0.0.1"
 

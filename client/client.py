@@ -14,6 +14,7 @@ from modules.time import save_login, last
 from modules.ip import is_public_ip
 import random
 from rich.text import Text
+import subprocess
 
 print('')
 print('')

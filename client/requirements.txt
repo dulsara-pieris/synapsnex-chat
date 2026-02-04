@@ -1,3 +1,4 @@
 pyfiglet
 platformdirs
 rich
+playsound
