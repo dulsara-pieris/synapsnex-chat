@@ -11,6 +11,8 @@ def listen():
                         msg = sock.recv(4096).decode()
                         if not msg:
                                 continue
+                        
+                        elif msg == '/rickrole'
                         else:
                                 print(GREEN + BOLD + msg + RESET)
 
