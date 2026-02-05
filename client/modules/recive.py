@@ -17,9 +17,9 @@ def ascii(endpoint):
                 print(f"\n{GREEN}{BOLD}Stopped! Back to chat...{RESET}\n")
                 break
             time.sleep(0.1)
-        
+
         current_process = None
-        
+
     except FileNotFoundError:
         print(f'{RED}{BOLD}curl not found. Install: sudo apt install curl{RESET}')
     except Exception as e:
