@@ -1,6 +1,14 @@
+import random, time
 
 current_process = None
 stop_flag = False
+
+def glitch(text):
+    return "".join(
+        c if random.random() > 0.2 else random.choice("#$%@")
+        for c in text
+    )
+
 
 def ascii(endpoint):
     global current_process, stop_flag
@@ -38,6 +46,7 @@ def listen():
             elif '/rickrole' in msg:
                 t = threading.Thread(target=ascii, args=("rick",), daemon=True)
                 t.start()
+                print(glitch("TRANSMISSION UNSTABLE"))
                 continue
             else:
                 print(GREEN + BOLD + msg + RESET)
@@ -48,3 +57,8 @@ def listen():
         except Exception as e:
             print(f'{RED}{BOLD}Connection lost: {e}{RESET}')
             break
+
+
+for _ in range(20):
+    
+    time.sleep(0.25)
