@@ -1,18 +1,20 @@
 console = Console()
 columns = shutil.get_terminal_size().columns
 
-f = Figlet(font='doom')
+f = Figlet(font='slant')
 banner = f.renderText("NEXUS    CHAT")
+
+def glitch(text):
+        chars = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*")
+        return ''.join(c if random.random() > 0.2 else random.choice(chars) for c in text)
 
 for line in banner.split("\n"):
         print(BOLD + GREEN + line.center(columns) + RESET)
         time.sleep(0.02)
 
-def glitch_text(text):
-        chars = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*")
-        return ''.join(c if random.random() > 0.2 else random.choice(chars) for c in text)
 
-boot_messages = [
+time.sleep(1)
+boot = [
         "Initializing System...",
         "Loading Modules...",
         "Connecting to Network...",
@@ -20,11 +22,11 @@ boot_messages = [
         "All Systems Online!"
 ]
 
-
-for msg in boot_messages:
+for msg in boot:
         for _ in range(2):
-                console.print(glitch_text(msg).center(columns), style="bold cyan")
+                console.print(glitch(msg).center(columns), style="bold cyan")
                 time.sleep(0.1)
+
         console.print(msg.center(columns), style="bold green")
         time.sleep(0.3)
 
